@@ -1,5 +1,5 @@
 require('file-loader?name=[name].[ext]!./index.html');
-import React from 'react';
+import React from "react";
 import { createRoot } from "react-dom/client";
 
 import App from './App'
