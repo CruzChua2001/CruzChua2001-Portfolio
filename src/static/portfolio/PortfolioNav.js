@@ -1,29 +1,42 @@
-import React from "react";
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import React, { useState } from "react";
+import {
+  MDBContainer,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBCollapse,
+  MDBIcon
+} from 'mdb-react-ui-kit';
  
 const PortfolioNav = _ => {
+    const [showNav, setShowNav] = useState(false);
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Cruz Chua</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              
-            </Nav>
-            <Nav>
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about">About</Nav.Link>
-                <Nav.Link href="/education">Education</Nav.Link>
-                <Nav.Link href="/work_experience">Work Experience</Nav.Link>
-                <Nav.Link href="/portfolio">Portfolio</Nav.Link>
-                <Nav.Link href="/contact">Contact</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <MDBNavbar expand='lg' dark bgColor='dark'>
+      <MDBContainer fluid className="px-5">
+        <MDBNavbarBrand href='#' style={{fontSize: "28px"}}>Cruz Chua</MDBNavbarBrand>
+        <MDBNavbarToggler
+          type='button'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setShowNav(!showNav)}
+        >
+          <MDBIcon icon='bars' fas />
+        </MDBNavbarToggler>
+        <MDBCollapse navbar show={showNav}>
+          <MDBNavbarNav right fullWidth={false}>
+            <MDBNavbarItem><MDBNavbarLink active aria-current='page' href="/">Home</MDBNavbarLink></MDBNavbarItem>
+            <MDBNavbarItem><MDBNavbarLink active aria-current='page' href='/about'>About</MDBNavbarLink></MDBNavbarItem>
+            <MDBNavbarItem><MDBNavbarLink active aria-current='page' href='/education'>Education</MDBNavbarLink></MDBNavbarItem>
+            <MDBNavbarItem><MDBNavbarLink active aria-current='page' href='/work_experience'>Work Experience</MDBNavbarLink></MDBNavbarItem>
+            <MDBNavbarItem><MDBNavbarLink active aria-current='page' href='/portfolio'>Portfolio</MDBNavbarLink></MDBNavbarItem>
+            <MDBNavbarItem><MDBNavbarLink active aria-current='page' href='/contact'>Contact</MDBNavbarLink></MDBNavbarItem>
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
     )
 }
 
