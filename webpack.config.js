@@ -3,10 +3,12 @@ const path = require("path");
 module.exports = {
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: 'index.bundle.js'
+        filename: 'index.bundle.js',
+        publicPath: '/'
     },
     devServer: {
-        port: 3030
+        port: 3030,
+        historyApiFallback: true
     },
     module: {
         rules: [
