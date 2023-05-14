@@ -41,12 +41,6 @@
     margin-left: 15%;
 }
 
-@media (max-width: 992px){
-    .left-col-about {
-        display: none
-    }
-}
-
 
 .image-cropper-about {
     width: 365px;
@@ -61,6 +55,32 @@
     display: inline;
     margin: 0 auto;
     margin-left: -215%; //centers the image
+}
+
+@media (max-width: 992px) {
+    .image-cropper-about {
+        width: 100%;
+        height: auto;
+        margin-top: 5%;
+        margin-left: 2%;
+    }
+
+    .about-picture {
+        margin: 0 auto;
+        margin-left: -70%; //centers the image
+    }
+}
+
+@media (max-width: 778px) {
+    .about-picture {
+        margin-left: -130%; //centers the image
+    }
+}
+
+@media (max-width: 558px) {
+    .about-picture {
+        margin-left: -160%; //centers the image
+    }
 }
 
 .certificate-image {

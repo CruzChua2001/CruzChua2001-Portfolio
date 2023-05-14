@@ -13,12 +13,12 @@ const About = _ => {
         <div className="about-container">
             <Container>
                 <div className="row">
-                    <div className="col-lg-6 pb-5 py-1 left-col-about">
+                    <div className="col-sm-12 col-lg-6 pb-5 py-1 order-last order-lg-first">
                         <div className="image-cropper-about">
                             <img src="https://cc-portfolio-cruzc-bucket.s3.ap-southeast-1.amazonaws.com/images/about_pic.png" alt="avatar" className="about-picture" />
                         </div>
                     </div>
-                    <div className="col-sm-12 col-lg-6 mt-5 pt-3">
+                    <div className="col-sm-12 col-lg-6 mt-5 pt-3 order-first order-lg-last">
                         <h2>About Me</h2>
 
                         <Hr />
