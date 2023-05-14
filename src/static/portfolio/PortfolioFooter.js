@@ -19,17 +19,17 @@ const PortfolioFooter = _ => {
 
             <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Socials</h6>
-              <p> <a href='#!' className='text-reset'>LinkedIn</a> </p>
-              <p> <a href='#!' className='text-reset'>GitHub</a> </p>
-              <p> <a href='#!' className='text-reset'>Instagram</a> </p>
+              <p> <a href='https://www.linkedin.com/in/cruz-c-69a027130/' target="_blank" className='text-reset'>LinkedIn</a> </p>
+              <p> <a href='https://github.com/CruzChua2001' target="_blank" className='text-reset'>GitHub</a> </p>
+              <p> <a href='https://www.instagram.com/justcruzc/' target="_blank" className='text-reset'>Instagram</a> </p>
             </MDBCol>
 
             <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
-              <p> <a href='#!' className='text-reset'>About</a> </p>
-              <p> <a href='#!' className='text-reset'>Education</a> </p>
-              <p> <a href='#!' className='text-reset'>Work Experience</a> </p>
-              <p> <a href='#!' className='text-reset'>Portfolio</a> </p>
+              <p> <a href='/about' className='text-reset'>About</a> </p>
+              <p> <a href='/education' className='text-reset'>Education</a> </p>
+              <p> <a href='work_experience' className='text-reset'>Work Experience</a> </p>
+              <p> <a href='/portfolio' className='text-reset'>Portfolio</a> </p>
             </MDBCol>
 
             <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
