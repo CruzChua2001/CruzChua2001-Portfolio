@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./static/portfolio/home/Home";
 import About from "./static/portfolio/about/About";
@@ -15,7 +15,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const App = _ => {
     return (
-        <HashRouter history={history}>
+        <BrowserRouter history={history}>
             <Routes>
 
                 <Route path="/" element={<PortfolioLayout />}>
@@ -28,7 +28,7 @@ const App = _ => {
                 </Route>
 
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 
