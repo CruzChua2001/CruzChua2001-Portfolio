@@ -3,7 +3,7 @@ import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-k
 
 const PortfolioFooter = _ => {
   return (
-    <MDBFooter bgColor='light' className='w-100 h-25 position-absolute bottom-0 mt-3 text-center text-lg-start text-muted border-top'>
+    <MDBFooter bgColor='dark' className='w-100 mt-3 text-center text-lg-start text-light border-top' style={{height: "40%"}}>
      <section className=''>
         <MDBContainer className='text-center text-md-start mt-5'>
           <MDBRow className='mt-3'>

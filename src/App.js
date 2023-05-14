@@ -19,15 +19,13 @@ const App = _ => {
             <Routes>
 
                 <Route path="/" element={<PortfolioLayout />}>
-                    <Route index element={<Home />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="education" element={<Education />} />
-                    <Route path="work_experience" element={<WorkExperience />} />
-                    <Route path="portfolio" element={<Portfolio />} />
-                    <Route path="contact" element={<Contact />} />
+                    <Route exact path="" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/education" element={<Education />} />
+                    <Route path="/work_experience" element={<WorkExperience />} />
+                    <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Route>
-
-                <Route path="/testing" element={<About />} />
 
             </Routes>
         </HashRouter>
