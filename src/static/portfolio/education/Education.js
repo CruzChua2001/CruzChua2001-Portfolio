@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import { Container, Button } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
+import { MortarboardFill, FileEarmarkCheckFill } from "react-bootstrap-icons";
+import styled from "styled-components";
  
 import 'react-vertical-timeline-component/style.min.css';
 
+const Pills = styled.div`
+    padding: 1em;
+    border-radius: 16px;
+    width: 600px;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+
+    @media (max-width: 750px) {
+        width: 250px;
+
+        .pill-text {
+            display: none;
+        }
+
+        .pill-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .pill-tabs-1{
+            margin-right: 5%;
+        }
+        .pill-tabs-2{
+            margin-left: 5%;
+        }
+    }
+`
+
 const Education = _ => {
+    const [tabs, setTabs] = useState(1);
 
     const certifications = [
         {
@@ -58,113 +91,135 @@ const Education = _ => {
     ] 
 
     return (
-        <Container className="mb-5 mt-3">
-            <div>
-                <h1>My Education Background</h1>
-                <VerticalTimeline>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        contentStyle={{ background: 'rgb(33, 150, 243)' }}
-                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                        date="Matriculating in 2025"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        //icon={<WorkIcon />}
-                    >
-                        <div className="text-light">
-                            <h3 className="vertical-timeline-element-title">Bachelor</h3>
-                            <h3 className="vertical-timeline-element-title">Information Communication Technology (Software Engineering)</h3>
-                            <h4 className="vertical-timeline-element-subtitle" style={{ color: "#F2D9BF" }}>Singapore Institute of Technology</h4>
-                            <p>
-                            Waiting for enlistment...
-                            </p>
+        <>
+            <Container className="mb-5 mt-3">
+                {tabs == 1 && (
+                    <div>
+                        <h1>My Education Background</h1>
+                        <VerticalTimeline>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                contentStyle={{ background: 'rgb(33, 150, 243)' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                date="Matriculating in 2025"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                //icon={<WorkIcon />}
+                            >
+                                <div className="text-light">
+                                    <h3 className="vertical-timeline-element-title">Bachelor</h3>
+                                    <h3 className="vertical-timeline-element-title">Information Communication Technology (Software Engineering)</h3>
+                                    <h4 className="vertical-timeline-element-subtitle" style={{ color: "#F2D9BF" }}>Singapore Institute of Technology</h4>
+                                    <p>
+                                    Waiting for enlistment...
+                                    </p>
+                                </div>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2020 - 2023"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                //icon={<WorkIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Diploma</h3>
+                                <h3 className="vertical-timeline-element-title">Information Technology</h3>
+                                <h4 className="vertical-timeline-element-subtitle" style={{ color: "grey" }}>Nanyang Polytechnic</h4>
+                                
+                                <table className="mt-2">
+                                    <tbody>
+                                        <tr>
+                                            <td>Specialisation:</td>
+                                            <td>Enterprise Cloud Computing (AWS)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2018 - 2020"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                //icon={<WorkIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Higher Nitec,</h3>
+                                <h3 className="vertical-timeline-element-title">IT Application Development</h3>
+                                
+                                <h4 className="vertical-timeline-element-subtitle" style={{ color: "grey" }}>ITE College Central</h4>
+                                <table className="mt-2">
+                                    <tbody>
+                                        <tr>
+                                            <td>CCA:</td>
+                                            <td>Foosball Club</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Leadership: <strong>Vice-President</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Participation: <strong>ITSF Singapore 2019</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Award:</td>
+                                            <td>Director's List 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Director's List 2019</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </VerticalTimelineElement>
+                        </VerticalTimeline>
+                    </div>
+                )}
+                
+                {tabs == 2 && (
+                    <div className="mt-4 mb-5">
+                        <h1>My Certification</h1>
+                        <div className="row mt-3">
+                            {certifications.map((item, index) => (
+                                <div key={index} className="col-xs-12 col-md-5 col-lg-3 mt-2 pt-3 pb-3 offset-md-1 offset-lg-1 shadow rounded h-100">
+                                    <img src={item.imageUrl} alt="certificate" className="certificate-image" />
+                                    <div className="mt-2">
+                                        <strong>{item.name}</strong> <br />
+                                        <span>{item.issuedBy}</span> <br />
+                                        <span>
+                                            Issued {item.issuedDate} 
+                                            {item.expirationDate != "" && 
+                                                <span> · Expires {item.expirationDate}</span>
+                                            }
+                                        </span>
+                                        <br />
+                                        {item.url != "" &&
+                                            <a href={item.url} target="_blank"><Button className="mt-2 border shadow-none" variant="">Show Credentials</Button></a>
+                                        }
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2020 - 2023"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        //icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Diploma</h3>
-                        <h3 className="vertical-timeline-element-title">Information Technology</h3>
-                        <h4 className="vertical-timeline-element-subtitle" style={{ color: "grey" }}>Nanyang Polytechnic</h4>
-                        
-                        <table className="mt-2">
-                            <tbody>
-                                <tr>
-                                    <td>Specialisation:</td>
-                                    <td>Enterprise Cloud Computing (AWS)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2018 - 2020"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        //icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Higher Nitec,</h3>
-                        <h3 className="vertical-timeline-element-title">IT Application Development</h3>
-                        
-                        <h4 className="vertical-timeline-element-subtitle" style={{ color: "grey" }}>ITE College Central</h4>
-                        <table className="mt-2">
-                            <tbody>
-                                <tr>
-                                    <td>CCA:</td>
-                                    <td>Foosball Club</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Leadership: <strong>Vice-President</strong></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Participation: <strong>ITSF Singapore 2019</strong></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"></td>
-                                </tr>
-                                <tr>
-                                    <td>Award:</td>
-                                    <td>Director's List 2018</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Director's List 2019</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </VerticalTimelineElement>
-                </VerticalTimeline>
-            </div>
+                    </div>
+                )}
+                
+            </Container>
+            
 
-            <div className="mt-4 mb-5">
-                <h1>My Certification</h1>
-                <div className="row mt-3">
-                    {certifications.map((item, index) => (
-                        <div key={index} className="col-xs-12 col-md-5 col-lg-3 mt-2 pt-3 pb-3 offset-md-1 offset-lg-1 shadow rounded h-100">
-                            <img src={item.imageUrl} alt="certificate" className="certificate-image" />
-                            <div className="mt-2">
-                                <strong>{item.name}</strong> <br />
-                                <span>{item.issuedBy}</span> <br />
-                                <span>
-                                    Issued {item.issuedDate} 
-                                    {item.expirationDate != "" && 
-                                        <span> · Expires {item.expirationDate}</span>
-                                    }
-                                </span>
-                                <br />
-                                {item.url != "" &&
-                                    <a href={item.url} target="_blank"><Button className="mt-2 border shadow-none" variant="">Show Credentials</Button></a>
-                                }
-                            </div>
-                        </div>
-                    ))}
-                </div>
+            <div style={{bottom: "20px", position: "fixed", width: "100%"}}>
+                <Pills className="border shadow">
+                    <a className="me-3 pill-tabs pill-tabs-1 text-dark" onClick={() => setTabs(1)}>
+                        <MortarboardFill className="pill-icon mb-1 me-2" size={25} />
+                        <span className="pill-text">Education Background</span>
+                    </a>
+                    <span>|</span>
+                    <a className="ms-3 pill-tabs pill-tabs-2 text-dark" onClick={() => setTabs(2)}>
+                        <FileEarmarkCheckFill className="pill-icon mb-1 me-2" size={25} />
+                        <span className="pill-text">Certifications</span>
+                    </a>
+                </Pills>
             </div>
-        </Container>
+        </>
     )
 }
 
