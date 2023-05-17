@@ -153,7 +153,7 @@ const WorkExperience = _ => {
                                 
                                     <br />
 
-                                    <Button variant="" className="mt-3 shadow-none border-none p-0" onClick={() => openDialog(item.id)}>View more details {'>'}{'>'} </Button>
+                                    <Button variant="" className="mt-3 d-block shadow-none border-none p-0" onClick={() => openDialog(item.id)}>View more details {'>'}{'>'} </Button>
                                 </VerticalTimelineElement>
                             )
                         }
