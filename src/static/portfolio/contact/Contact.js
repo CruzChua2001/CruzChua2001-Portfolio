@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 import styled from "styled-components";
 import axios from 'axios';
 
+import jsonConfig from '../../../../appsettings.json';
+
 const Div = styled.div`
     margin-block: 5%;
     padding: 5% 3%;
@@ -19,7 +21,7 @@ const Contact = _ => {
     const [message, setMessage] = useState({"firstName": "", "lastName": "", "email": "", "message": ""})
 
     const sendEmail = () => {
-        axios.post("https://tnidj38tv1.execute-api.ap-southeast-1.amazonaws.com/PROD/sendEmail", JSON.stringify(message))
+        axios.post(jsonConfig.CONFIG.API_URLS[0]+jsonConfig.CONTACT.SEND_EMAIL_API_URL, JSON.stringify(message))
         .then(response => {
             console.log(response)
         })
@@ -31,8 +33,7 @@ const Contact = _ => {
                 <Div className="col-12 col-lg-6">
                     <h1>Contact Me</h1>
                     <p>
-                        Need to get in touch with me? 
-                        Fill in the form with your inquiry and I will get back to you within 3-5 business days.
+                        {jsonConfig.CONTACT.CONTACT_ME_TEXT}
                     </p>
                     <h1>Reach Me Here</h1>
                     
@@ -40,17 +41,16 @@ const Contact = _ => {
                         <tbody>
                             <tr>
                                 <Td>Email:</Td>
-                                <Td>2001cruzchua@gmail.com</Td>
+                                <Td><a href={"mailto:"+jsonConfig.CONFIG.EMAIL}>{jsonConfig.CONFIG.EMAIL}</a></Td>
                             </tr>
                             <tr>
                                 <Td>Phone No.:</Td>
-                                <Td>+65 92773372</Td>
+                                <Td><a href={"tel:"+jsonConfig.CONFIG.PHONE_LINK}>{jsonConfig.CONFIG.PHONE}</a></Td>
                             </tr>
                             <tr>
                                 <Td>Address:</Td>
                                 <Td rowSpan="2">
-                                    Blk 795 Yishun Ring Road,
-                                    S760795
+                                    {jsonConfig.CONFIG.ADDRESS}
                                 </Td>
                             </tr>
                         </tbody>
