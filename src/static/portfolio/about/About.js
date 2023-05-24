@@ -17,7 +17,7 @@ const About = _ => {
                 <div className="row">
                     <div className="col-sm-12 col-lg-6 pb-5 py-1 order-last order-lg-first">
                         <div className="image-cropper-about">
-                            <img src={jsonConfig.ABOUT.IMAGE_URL} alt="avatar" className="about-picture" />
+                            <img src={jsonConfig.CONFIG.BUCKET_URL+jsonConfig.ABOUT.IMAGE_URL} alt="avatar" className="about-picture" />
                         </div>
                     </div>
                     <div className="col-sm-12 col-lg-6 mt-5 pt-3 order-first order-lg-last">
@@ -35,7 +35,7 @@ const About = _ => {
                             <Hr />
 
                             <p className="mt-3" style={{ fontSize: '20px' }}>
-                                <a href={jsonConfig.ABOUT.RESUME_URL} target="_blank" style={{ color: 'grey' }}>Resume</a>
+                                <a href={jsonConfig.CONFIG.BUCKET_URL+jsonConfig.ABOUT.RESUME_URL} target="_blank" style={{ color: 'grey' }}>Resume</a>
                             </p>
                         </div>
                     </div>

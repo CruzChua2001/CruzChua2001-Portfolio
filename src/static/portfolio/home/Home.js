@@ -9,7 +9,7 @@ const Home = _ => {
             <div className="row w-100 h-100">
                 <div className="col-xs-12 col-lg-6 order-xs-first order-lg-last">
                     <div className="image-cropper-home">
-                        <img src={jsonConfig.HOME.PROFILE_PIC_URL} alt="avatar" className="profile-picture" width="310px" height="400px" />
+                        <img src={jsonConfig.CONFIG.BUCKET_URL+jsonConfig.HOME.PROFILE_PIC_URL} alt="avatar" className="profile-picture" width="310px" height="400px" />
                     </div>
                 </div>
                 <div className="col-xs-12 col-lg-6 home-left-div order-xs-last order-lg-first" style={{paddingLeft: "15%"}}>
