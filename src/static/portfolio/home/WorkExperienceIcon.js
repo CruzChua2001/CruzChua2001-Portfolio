@@ -2,10 +2,14 @@ import React, { useEffect, useRef } from "react";
 import { Timeline, Event } from 'react-trivial-timeline';
 import { Briefcase } from "react-bootstrap-icons";
 
+import { useOverlay } from "../../../Context";
+import Navigation from "../../layout/Navigation";
+
 import jsonConfig from '../../../../appsettings.json';
 
 const WorkExperienceIcon = props => {
     const elementRefs = useRef([]);
+    const navContext = useOverlay();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -20,7 +24,7 @@ const WorkExperienceIcon = props => {
     if(props.size == "xs") {
         return (
             <div className="app-icon weIcon-xs we-animation" ref={(el) => (elementRefs.current[0] = el)}>
-                <a className="app-icon-button clickable">
+                <a className="app-icon-button clickable" onClick={() => navContext.setPage(Navigation.WorkExperience)}>
                     <img className="app-icon-img rounded-6" src="https://cc-portfolio-cruzc-bucket-dev.s3.ap-southeast-1.amazonaws.com/images/experience-icon-background.png" alt="app-icon-img" />
                     <Briefcase className="app-icon-logo" />
                 </a>
@@ -42,7 +46,10 @@ const WorkExperienceIcon = props => {
     }
 
     return (
-        <div className={props.size == "s" ? "p-3 weIcon-sm rounded shadow border-light bg-light clickable we-animation" : "p-3 weIcon rounded shadow border-light bg-light clickable we-animation"} ref={(el) => (elementRefs.current[1] = el)}>
+        <div className={props.size == "s" ? "p-3 weIcon-sm rounded shadow border-light bg-light clickable we-animation" : "p-3 weIcon rounded shadow border-light bg-light clickable we-animation"} 
+            ref={(el) => (elementRefs.current[1] = el)}
+            onClick={() => navContext.setPage(Navigation.WorkExperience)}
+        >
             <h3>Work <br /> Experience</h3>
             <Timeline lineColor="gray" className="mt-3">
                 {workExp.map((exp, index) => (
