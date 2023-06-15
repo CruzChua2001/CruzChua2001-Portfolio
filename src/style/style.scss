@@ -1,92 +1,591 @@
-// body {
-//     background: url("https://cc-portfolio-cruzc-bucket.s3.ap-southeast-1.amazonaws.com/images/home_background.png") no-repeat center fixed;
-//     background-size: cover;
-//     width: 100%;
-//     height: 100%;
-// }
+// Variables
+$screen-xs: 650px;
+$screen-s: 850px;
+$screen-md: 1100px;
+$screen-lg: 1200px;
 
-.home-container {
-    background: url("https://cc-portfolio-cruzc-bucket.s3.ap-southeast-1.amazonaws.com/images/home_background.png") no-repeat center fixed;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 15%;
+$main-color: #5874BC;
+$red-color: #DA8674;
+
+// Animation -----------------------------
+@mixin fade-in($waitTime) {
+    animation: 
+        wait #{$waitTime},
+        fade-in 800ms #{$waitTime};
 }
 
-.home-left-container {
-    margin-top: 25%;
-}
-
-@media (max-width: 992px) {
-    .home-left-container {
-        margin-top: 50px;
+@keyframes wait {
+    0% { 
+        opacity: 0; 
+    }
+    100% { 
+        opacity: 0; 
     }
 }
 
-.home-left-container h1{
-    font-size: 60px;
+@keyframes fade-in {
+    0% {
+        transform: translateY(10%);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.home-left-container p{
-    font-size: 20px;
+@mixin slide-up($waitTime) {
+    animation: 
+        wait #{$waitTime},
+        fade-in 800ms #{$waitTime};
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.introduction-container h2 {
+    @include fade-in('0s')
+}
+
+.introduction-card {
+    @include fade-in('0.2s')
+}
+
+.app-icon-topContainer div:nth-child(1) {
+    @include fade-in('0.3s')
+}
+
+.app-icon-topContainer div:nth-child(2) {
+    @include fade-in('0.35s')
+}
+
+.app-icon-bottomContainer div:nth-child(1) {
+    @include fade-in('0.3s')
+}
+
+.app-icon-bottomContainer div:nth-child(2) {
+    @include fade-in('0.35s')
+}
+
+.we-animation {
+    @include fade-in('0.4s')
+}
+
+.contact-container {
+    @include fade-in('0.7s')
+}
+
+.overlay-animation {
+    @include slide-up('0.2s')
+}
+
+// Styling -------------------------------
+body {
+    // background-color: black;
+    color: white;
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-image: linear-gradient(191deg, #01011EFF 0%, #03032BFF 9%, #135D7EFF 88%);
+    font-family: 'League Spartan';font-size: 22px;
+}
+
+.text-main {
+    color: $main-color;
+}
+
+.color-red {
+    color: $red-color;
+}
+
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5% auto;
+    width: 1200px;
+}
+
+.home-top {
+    width: 70%;
+}
+  
+.home-right {
+    float: right;
+    width: 30%;
+}
+
+.home-bottom {
+    flex: 1 1 100%;
+    margin-top: -40vh;
+}
+
+.introduction-container {
+    display: flex
+}
+
+.introduction-card {
+    width: 200%;
+    max-width: 400px;
+    padding: 7% 10% 7% 5%;
+    margin-left: 30%;
+    padding-top: 10%;
+}
+
+.introduction-card-detail {
+    width: 40%;
 }
 
 .image-cropper-home {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    margin-top: 10%;
-    margin-left: 15%;
+    margin-left: 35%;
 }
 
-
-.image-cropper-about {
-    width: 365px;
-    height: 600px;
-    position: relative;
-    overflow: hidden;
-    margin-top: 10%;
-    margin-left: 15%;
+.profile-picture {
+    width: 105px;
+    height: 140px;
 }
 
-.about-picture {
-    display: inline;
-    margin: 0 auto;
-    margin-left: -215%; //centers the image
-}
-
-@media (max-width: 992px) {
-    .image-cropper-about {
-        width: 100%;
-        height: auto;
-        margin-top: 5%;
-        margin-left: 2%;
-    }
-
-    .about-picture {
-        margin: 0 auto;
-        margin-left: -70%; //centers the image
-    }
-}
-
-@media (max-width: 778px) {
-    .about-picture {
-        margin-left: -130%; //centers the image
-    }
-}
-
-@media (max-width: 558px) {
-    .about-picture {
-        margin-left: -160%; //centers the image
-    }
-}
-
-.certificate-image, .portfolio-image {
+.app-icon-container {
+    display: flex;
     width: 100%;
+    margin: 0;
 }
 
-.pill-tabs:hover {
+.app-icon-topContainer, .app-icon-bottomContainer {
+    display: flex;
+}
+
+.app-icon {
+    margin-right: 10%;
+}
+
+.app-icon-button {
+    position: relative;
+}
+
+.app-icon-logo {
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    width: 50px;
+    height: auto;
+    transition: top 0.25s, left 0.25s;
+}
+
+.app-icon-topContainer {
+    margin-right: 4.5%;
+}
+
+.weIcon-sm {
+    display: none;
+}
+
+.weIcon {
+    height: 80vh;
+    width: 100%;
+    background-color: white;
+}
+
+.weIcon, .weIcon-sm {
+    color: $main-color;
+    font-size: 15px;
+}
+
+.weIcon-xs {
+    display: none;
+}
+
+.break-icons {
+    display: none;
+}
+
+.clickable:hover {
     cursor: pointer;
+}
+
+.app-icon-img {
+    width: 100px;
+    height: 100px;
+    transition: width 0.25s, height 0.25s;
+}
+
+.app-icon-img:hover, .app-icon-logo:hover + .app-icon {
+    width: 102px;
+    height: 102px;
+}
+
+.app-icon-img:hover + .app-icon-logo {
+    top: -14px;
+    left: 26px;
+}
+
+.contact-container {
+    color: black;
+    padding: 3%;
+    width: 790px;
+}
+
+.contact-form {
+    width: 75%;
+}
+
+.overlay-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background-disable {
+    top: 0;
+    left: 0;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background: black;
+    opacity: 0.5;
+    z-index: 99;
+}
+
+.display-item {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 100;
+    overflow-y: scroll;
+}
+
+.back-button {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: $main-color;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+}
+
+.back-button-icon {
+    margin-top: 20%;
+    margin-left: 20%;
+}
+
+// Screen size less than 1200px --------------------------------
+
+@media screen and (max-width: $screen-lg) {
+    .introduction-container {
+        display: flex;
+        justify-content: center;
+        margin-right: 20%;
+    }
+
+    .home-container {
+        max-width: 100%;
+        margin: 5% auto;
+    }
+    
+    .home-top {
+        width: 100%;
+    }
+
+    .home-right { 
+        float: left;
+        display: block;
+        width: 100%;
+    }
+
+    .home-bottom {
+        margin-top: 5%;
+    }
+
+    .app-icon-flex {
+        margin-left: 23%;
+    }
+
+    .app-icon-topContainer {
+        margin-right: 6%;
+    }
+
+    .app-icon-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .app-icon-logo {
+        top: -23px;
+        left: 30px;
+        width: 65px;
+    }
+
+    .app-icon-img:hover, .app-icon-logo:hover + .app-icon {
+        width: 132px;
+        height: 132px;
+    }
+    
+    .app-icon-img:hover + .app-icon-logo {
+        top: -24px;
+        left: 31px;
+    }
+
+    .weIcon {
+        height: 70vh;
+        width: 500px;
+        margin-left: 28%;
+        margin-top: 2%;
+    }
+
+    .contact-container {
+        margin: 3% auto;
+    }
+}
+
+// Screen size less than 950px --------------------------------
+
+@media screen and (max-width: $screen-md) {
+    .home-container {
+        max-width: 100%;
+        margin: 5% auto;
+    }
+
+    .introduction-container {
+        justify-content: space-around;
+        width: 78%;
+    }
+
+    .introduction-card {
+        margin-left: 10%;
+    }
+
+    .introduction-container-card {
+        width: 90%
+    }
+
+    
+    .home-right {
+        float: left;
+        width: 100%;
+    }
+
+    .image-cropper-home {
+        margin-left: 40%;
+    }
+
+    .home-bottom {
+        margin-top: 0;
+    }
+
+    .contact-container, .weIcon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .weIcon {
+        width: 90%;
+        height: 40vh;
+        margin-top: 3%;
+    }
+
+    .contact-container {
+        margin-top: 5%;
+        width: 90%;
+    }
+
+    .app-icon-container {
+        display: block;
+        width: 40%;
+        margin: 2% auto;
+    }
+
+    .app-icon-topContainer, .app-icon-bottomContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .app-icon-topContainer {
+        margin-right: 0;
+    }
+
+    .app-icon-flex {
+        display: flex;
+    }
+
+    .weIcon {
+        display: none;
+    }
+
+    .weIcon-sm {
+        display: block;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .app-icon-flex {
+        margin-left: 0;
+    }
+
+    .app-icon-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .app-icon-logo {
+        top: -20px;
+        left: 43px;
+        width: 65px;
+    }
+
+    .app-icon-img:hover, .app-icon-logo:hover + .app-icon {
+        width: 152px;
+        height: 152px;
+    }
+    
+    .app-icon-img:hover + .app-icon-logo {
+        top: -19px;
+        left: 44px;
+    }
+}
+
+// Screen size less than 850px --------------------------------
+
+@media screen and (max-width: $screen-s) {
+    body {
+        padding-block: 3%;
+    }
+
+    .introduction-container {
+        display: block;
+        width: 100%;
+    }
+
+    .introduction-container h2 {
+        margin-left: 5%;
+    }
+
+    .introduction-card {
+        width: 90% !important;
+        max-width: none;
+        padding: 4%;
+        margin-left: 5%;
+    }
+
+    .app-icon-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .app-icon-logo {
+        top: -23px;
+        left: 30px;
+        width: 65px;
+    }
+
+    .app-icon-img:hover, .app-icon-logo:hover + .app-icon {
+        width: 132px;
+        height: 132px;
+    }
+    
+    .app-icon-img:hover + .app-icon-logo {
+        top: -24px;
+        left: 31px;
+    }
+
+    .contact-container {
+        margin: 2% auto;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+// Screen size less than 650px --------------------------------
+
+@media screen and (max-width: $screen-xs) {
+    .introduction-container {
+        display: block;
+        width: 100%;
+    }
+
+    .image-cropper-home {
+        width: 130px;
+        height: 130px;
+        margin-left: 30%;
+    }
+
+    .profile-picture {
+        width: 130px;
+        height: 170px;
+    }
+
+    .introduction-card-detail {
+        padding-top: 3%;
+    }
+
+    .home-container {
+        width: 100%;
+        margin: 5% 1%;
+    }
+
+    .app-icon-container {
+        display: block;
+        width: 70%;
+        margin: 2% auto;
+    }
+
+    .app-icon-topContainer, .app-icon-bottomContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .app-icon, .app-icon-topContainer {
+        margin-right: 0%;
+    }
+
+    .app-icon-img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .app-icon-logo {
+        top: -19px;
+        left: 32px;
+        width: 60px;
+    }
+
+    .app-icon-img:hover, .app-icon-logo:hover + .app-icon {
+        width: 127px;
+        height: 127px;
+    }
+    
+    .app-icon-img:hover + .app-icon-logo {
+        top: -18px;
+        left: 33px;
+    }
+
+    .home-right {
+        display: block;
+    }
+
+    .weIcon-sm, .weIcon {
+        display: none;
+    }
+
+    .weIcon-xs {
+        display: block;
+    }
 }
