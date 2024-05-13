@@ -46,51 +46,61 @@ const About = _ => {
                 </article>
             </div>
 
-            <div className="about-header pt-3">
+            <div className="about-header py-3">
                 <Heading>Skills</Heading>
                 <Row>
                     <Col xs="12" lg>
                         <Row className="border p-3">
-                            <Col xs="12" md="4" lg="12"><h3 style={{color: "#5874BC"}}>Front-end</h3></Col>
+                            <Col xs="12" md="4" lg="12"><h3 style={{color: "#B6AECB"}}>Front-end</h3></Col>
                             <Col xs="12" md="8" lg="12">
-                                <a href=""><DiHtml5 color="white" size="75px" /></a>
-                                <a href=""><DiCss3 color="white" size="75px" /></a>
-                                <a href=""><DiJavascript color="white" size="75px" /></a>
-                                <a href=""><DiJqueryLogo color="white" size="75px" /></a>
-                                <a href=""><DiReact color="white" size="75px" /></a>
-                                <a href=""><DiBootstrap color="white" size="75px" /></a>
-                                <a href=""><DiResponsive color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiHtml5 color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiCss3 color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiJavascript color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiJqueryLogo color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiReact color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiBootstrap color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiResponsive color="white" size="75px" /></a>
                             </Col>
                         </Row>
                     </Col>
                     <Col xs="12" lg>
                         <Row className="border p-3">
-                            <Col xs="12" md="4" lg="12"><h3 style={{color: "#5874BC"}}>Back-end</h3></Col>
+                            <Col xs="12" md="4" lg="12"><h3 style={{color: "#B6AECB"}}>Back-end</h3></Col>
                             <Col xs="12" md="8" lg="12">
-                                <a href=""><DiPhp color="white" size="75px" /></a>
-                                <a href=""><DiPython color="white" size="75px" /></a>
-                                <a href=""><DiJava color="white" size="75px" /></a>
-                                <a href=""><DiSwift color="white" size="75px" /></a>
-                                <a href=""><DiNodejs color="white" size="75px" /></a>
-                                <a href=""><DiNetmagazine color="white" size="75px" /></a>
-                                <a href=""><DiDatabase color="white" size="75px" /></a>
-                                <a href=""><DiMysql color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiPhp color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiPython color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiJava color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiSwift color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiNodejs color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiNetmagazine color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiDatabase color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiMysql color="white" size="75px" /></a>
                             </Col>
                         </Row>
                     </Col>
                     <Col xs="12" lg>
                         <Row className="border p-3">
-                            <Col xs="12" md="4" lg="12"><h3 style={{color: "#5874BC"}}>Others</h3></Col>
+                            <Col xs="12" md="4" lg="12"><h3 style={{color: "#B6AECB"}}>Others</h3></Col>
                             <Col xs="12" md="8" lg="12">
-                                <a href=""><DiGithubBadge color="white" size="75px" /></a>
-                                <a href=""><DiAws color="white" size="75px" /></a>
-                                <a href=""><DiGoogleCloudPlatform color="white" size="75px" /></a>
-                                <a href=""><DiTerminal color="white" size="75px" /></a>
-                                <a href=""><DiVisualstudio color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiGithubBadge color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiAws color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiGoogleCloudPlatform color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiTerminal color="white" size="75px" /></a>
+                                <a href="" className="clickable"><DiVisualstudio color="white" size="75px" /></a>
                             </Col>
                         </Row>
                     </Col>
                 </Row>
+            </div>
+
+            <Hr />
+
+            <div className="text-center pt-3">
+                <Heading>Contact</Heading>
+
+                <p className="text-light"><a href={"mailto:" + jsonConfig.CONFIG.EMAIL} className="text-light">{jsonConfig.CONFIG.EMAIL}</a></p>
+                <p className="text-light"><a href={"tel:" + jsonConfig.CONFIG.PHONE_LINK} className="text-light">{jsonConfig.CONFIG.PHONE}</a></p>
+                <p>{jsonConfig.CONFIG.ADDRESS}</p>
             </div>
         </div>
         
