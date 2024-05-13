@@ -53,13 +53,13 @@ const About = _ => {
                         <Row className="border p-3">
                             <Col xs="12" md="4" lg="12"><h3 style={{color: "#B6AECB"}}>Front-end</h3></Col>
                             <Col xs="12" md="8" lg="12">
-                                <a href="" className="clickable"><DiHtml5 color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiCss3 color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiJavascript color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiJqueryLogo color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiReact color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiBootstrap color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiResponsive color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/html/default.asp" className="clickable" target="_blank"><DiHtml5 color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/cssref/index.php" className="clickable" target="_blank"><DiCss3 color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/js/default.asp" className="clickable" target="_blank"><DiJavascript color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/jquery/default.asp" className="clickable" target="_blank"><DiJqueryLogo color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/react/default.asp" className="clickable" target="_blank"><DiReact color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp" className="clickable" target="_blank"><DiBootstrap color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/html/html_responsive.asp" className="clickable" target="_blank"><DiResponsive color="white" size="75px" /></a>
                             </Col>
                         </Row>
                     </Col>
@@ -67,14 +67,14 @@ const About = _ => {
                         <Row className="border p-3">
                             <Col xs="12" md="4" lg="12"><h3 style={{color: "#B6AECB"}}>Back-end</h3></Col>
                             <Col xs="12" md="8" lg="12">
-                                <a href="" className="clickable"><DiPhp color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiPython color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiJava color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiSwift color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiNodejs color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiNetmagazine color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiDatabase color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiMysql color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/php/default.asp" className="clickable" target="_blank"><DiPhp color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/python/default.asp" className="clickable" target="_blank"><DiPython color="white" size="75px" /></a>
+                                <a href="https://www.w3schools.com/java/default.asp" className="clickable" target="_blank"><DiJava color="white" size="75px" /></a>
+                                <a href="https://www.swift.org/documentation/" className="clickable" target="_blank"><DiSwift color="white" size="75px" /></a>
+                                <a href="https://nodejs.org/docs/latest/api/" className="clickable" target="_blank"><DiNodejs color="white" size="75px" /></a>
+                                <a href="https://learn.microsoft.com/en-us/dotnet/" className="clickable" target="_blank"><DiNetmagazine color="white" size="75px" /></a>
+                                <a href="https://dbdocs.io" className="clickable" target="_blank"><DiDatabase color="white" size="75px" /></a>
+                                <a href="https://dev.mysql.com/doc/" className="clickable" target="_blank"><DiMysql color="white" size="75px" /></a>
                             </Col>
                         </Row>
                     </Col>
@@ -82,11 +82,11 @@ const About = _ => {
                         <Row className="border p-3">
                             <Col xs="12" md="4" lg="12"><h3 style={{color: "#B6AECB"}}>Others</h3></Col>
                             <Col xs="12" md="8" lg="12">
-                                <a href="" className="clickable"><DiGithubBadge color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiAws color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiGoogleCloudPlatform color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiTerminal color="white" size="75px" /></a>
-                                <a href="" className="clickable"><DiVisualstudio color="white" size="75px" /></a>
+                                <a href="https://github.com" className="clickable" target="_blank"><DiGithubBadge color="white" size="75px" /></a>
+                                <a href="https://aws.amazon.com" className="clickable" target="_blank"><DiAws color="white" size="75px" /></a>
+                                <a href="https://cloud.google.com" className="clickable" target="_blank"><DiGoogleCloudPlatform color="white" size="75px" /></a>
+                                <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands" target="_blank" className="clickable"><DiTerminal color="white" size="75px" /></a>
+                                <a href="https://visualstudio.microsoft.com" className="clickable" target="_blank"><DiVisualstudio color="white" size="75px" /></a>
                             </Col>
                         </Row>
                     </Col>
