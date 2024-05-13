@@ -301,6 +301,7 @@ body {
     
     .home-top {
         width: 100%;
+        padding: 0;
     }
 
     .home-right { 
@@ -431,7 +432,7 @@ body {
     .weIcon-sm {
         display: block;
         width: 40%;
-        margin: 0 auto;
+        margin-right: 9%;
     }
 
     .app-icon-flex {
@@ -532,8 +533,15 @@ body {
         height: 170px;
     }
 
+    .introduction-card {
+        padding: 0;
+        width: 100% !important;
+        margin: 0;
+    }
+
     .introduction-card-detail {
         padding-top: 3%;
+        padding-bottom: 3%;
     }
 
     .home-container {
