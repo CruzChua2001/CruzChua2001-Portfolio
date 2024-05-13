@@ -267,14 +267,13 @@ body {
     height: 100vh;
     background: white;
     z-index: 100;
-    overflow-y: scroll;
 }
 
 .back-button {
     border-radius: 50%;
     height: 60px;
     width: 60px;
-    background-color: $main-color;
+    background-color: lightgray;
     position: fixed;
     bottom: 30px;
     left: 30px;
@@ -285,6 +284,60 @@ body {
     margin-left: 20%;
 }
 
+// About Page --------------------------------
+
+.about-container {
+    color: white;
+    background-image: linear-gradient(191deg, #01011EFF 0%, #03032BFF 9%, #135D7EFF 88%);
+    min-width: 100vw;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 5em;
+}
+
+.image-cropper-about {
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-picture {
+    width: 100%;
+    height: auto; 
+    min-height: 300px;
+    display: block;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.image-text {
+    color: white;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.about-quote {
+    margin: 2em auto;
+    text-align: center;
+    color: white;
+}
+
+.about-quote > :first-child {
+   margin-right: 8%;
+}
+
+.about-quote > :nth-child(2) {
+    margin-left: 8%;
+}
+
+.about-header {
+    width: 75%;
+    margin: 0 auto;
+}
 // Screen size less than 1200px --------------------------------
 
 @media screen and (max-width: $screen-lg) {
@@ -301,6 +354,7 @@ body {
     
     .home-top {
         width: 100%;
+        padding: 0;
     }
 
     .home-right { 
@@ -431,7 +485,7 @@ body {
     .weIcon-sm {
         display: block;
         width: 40%;
-        margin: 0 auto;
+        margin-right: 9%;
     }
 
     .app-icon-flex {
@@ -532,8 +586,15 @@ body {
         height: 170px;
     }
 
+    .introduction-card {
+        padding: 0;
+        width: 100% !important;
+        margin: 0;
+    }
+
     .introduction-card-detail {
         padding-top: 3%;
+        padding-bottom: 3%;
     }
 
     .home-container {
