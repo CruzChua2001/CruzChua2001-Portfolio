@@ -24,8 +24,8 @@ const About = _ => {
             </div>
 
             <div className="about-quote">
-                <h2 className="fw-bolder">"I design <c style={{color: "#FDDA82"}}>solution</c> to your <c style={{color: "#EA1C1C"}}>problems</c>,</h2>
-                <h2 className="fw-bolder">combining <c style={{color: "#A57A6D"}}>simplicity</c> and <c style={{color: "#A57A6D"}}>efficiency</c>."</h2>
+                <h2>"I design <c style={{color: "#FDDA82"}}>solution</c> to your <c style={{color: "#EA1C1C"}}>problems</c>,</h2>
+                <h2>combining <c style={{color: "#A57A6D"}}>simplicity</c> and <c style={{color: "#A57A6D"}}>efficiency</c>."</h2>
             </div>
 
             <Hr />

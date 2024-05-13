@@ -305,6 +305,7 @@ body {
 .about-picture {
     width: 100%;
     height: auto; 
+    min-height: 300px;
     display: block;
     object-fit: cover;
     opacity: 0.6;
@@ -320,17 +321,17 @@ body {
 }
 
 .about-quote {
-    margin: 5% auto;
+    margin: 2em auto;
     text-align: center;
     color: white;
 }
 
 .about-quote > :first-child {
-   margin-right: 9%;
+   margin-right: 8%;
 }
 
 .about-quote > :nth-child(2) {
-    margin-left: 9%;
+    margin-left: 8%;
 }
 
 .about-header {
