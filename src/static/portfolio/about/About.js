@@ -8,7 +8,7 @@ import jsonConfig from '../../../../appsettings.json';
 const Hr = styled.div`
     border: 1px solid #A5A1A1; 
     width: 75%;
-    margin: 1em auto;
+    margin: 2em auto;
 `
 
 const Heading = styled.h1`
@@ -24,8 +24,8 @@ const About = _ => {
             </div>
 
             <div className="about-quote">
-                <h2>"I design <c style={{color: "#FDDA82"}}>solution</c> to your <c style={{color: "#EA1C1C"}}>problems</c>,</h2>
-                <h2>combining <c style={{color: "#A57A6D"}}>simplicity</c> and <c style={{color: "#A57A6D"}}>efficiency</c>."</h2>
+                <h2 className="fw-bolder">"I design <c style={{color: "#FDDA82"}}>solution</c> to your <c style={{color: "#EA1C1C"}}>problems</c>,</h2>
+                <h2 className="fw-bolder">combining <c style={{color: "#A57A6D"}}>simplicity</c> and <c style={{color: "#A57A6D"}}>efficiency</c>."</h2>
             </div>
 
             <Hr />
