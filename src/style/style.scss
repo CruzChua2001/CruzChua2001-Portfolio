@@ -267,14 +267,13 @@ body {
     height: 100vh;
     background: white;
     z-index: 100;
-    overflow-y: scroll;
 }
 
 .back-button {
     border-radius: 50%;
     height: 60px;
     width: 60px;
-    background-color: $main-color;
+    background-color: lightgray;
     position: fixed;
     bottom: 30px;
     left: 30px;
@@ -283,6 +282,59 @@ body {
 .back-button-icon {
     margin-top: 20%;
     margin-left: 20%;
+}
+
+// About Page --------------------------------
+
+.about-container {
+    color: white;
+    background-image: linear-gradient(191deg, #01011EFF 0%, #03032BFF 9%, #135D7EFF 88%);
+    min-width: 100vw;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 5em;
+}
+
+.image-cropper-about {
+    width: 100vw;
+    height: 45vh;
+    position: relative;
+    overflow: hidden;
+    background-color:black;
+}
+
+.about-picture {
+    height: 200%;
+    width: 100%;
+    opacity: 0.6;
+}
+
+.image-text {
+    color: white;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.about-quote {
+    margin: 5% auto;
+    text-align: center;
+    color: white;
+}
+
+.about-quote > :first-child {
+   margin-right: 9%;
+}
+
+.about-quote > :nth-child(2) {
+    margin-left: 9%;
+}
+
+.about-header {
+    width: 75%;
+    margin: 0 auto;
 }
 
 // Screen size less than 1200px --------------------------------
