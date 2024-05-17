@@ -46,6 +46,10 @@ const CircleArrow = styled.div`
 
 const SchoolTitle = styled.h3`
   color: #A57A6D;
+
+  @media (max-width: 562px) {
+      font-size: 16px;
+  }
 `
 
 const SchoolDetails = styled.article`
@@ -54,6 +58,22 @@ const SchoolDetails = styled.article`
   @media (max-width: 992px) {
       width: 100%;
   }
+
+  @media (max-width: 562px) {
+    font-size: 15px;
+  }
+`
+
+const SchoolType = styled.span`
+    @media (max-width: 562px) {
+        font-size: 15px;
+    }
+`
+
+const SchoolStatus = styled.p`
+    @media (max-width: 562px) {
+        font-size: 14px;
+    }
 `
 
 
@@ -77,9 +97,9 @@ const Education = _ => {
                             </div>
                             <div className="mt-4 ms-3 position-relative education-title">
                                 <SchoolTitle>Singapore Management University</SchoolTitle>
-                                <span>Bachelor of Science, Software Engineering</span>
+                                <SchoolType>Bachelor of Science, Software Engineering</SchoolType>
 
-                                <p className="position-absolute bottom-0">Matriculating in 2025</p>
+                                <SchoolStatus className="position-absolute bottom-0">Matriculating in 2025</SchoolStatus>
                             </div>
                         </div>
                     </div>
@@ -97,9 +117,9 @@ const Education = _ => {
                                 </div>
                                 <div className="mt-4 ms-3 position-relative education-title">
                                     <SchoolTitle>Nanyang Polytechnic</SchoolTitle>
-                                    <span>Diploma in Information Technology</span>
+                                    <SchoolType>Diploma in Information Technology</SchoolType>
 
-                                    <p className="position-absolute bottom-0">Graduated with cGPA 3.68</p>
+                                    <SchoolStatus className="position-absolute bottom-0">Graduated with cGPA 3.68</SchoolStatus>
                                 </div>
                             </div>
 
@@ -131,9 +151,9 @@ const Education = _ => {
                                 </div>
                                 <div className="mt-4 ms-3 position-relative education-title">
                                     <SchoolTitle>ITE College Central</SchoolTitle>
-                                    <span>Higher Nitec in IT App Development</span>
+                                    <SchoolType>Higher Nitec in IT App Development</SchoolType>
 
-                                    <p className="position-absolute bottom-0">Graduated with cGPA 3.74</p>
+                                    <SchoolStatus className="position-absolute bottom-0">Graduated with cGPA 3.74</SchoolStatus>
                                 </div>
                             </div>
 
@@ -168,9 +188,9 @@ const Education = _ => {
                                 </div>
                                 <div className="mt-4 ms-3 position-relative education-title">
                                     <SchoolTitle>Chung Cheng High School (Yishun)</SchoolTitle>
-                                    <span>GCE N(A) Level</span>
+                                    <SchoolType>GCE N(A) Level</SchoolType>
 
-                                    <p className="position-absolute bottom-0">Graduated with EMB3 of 12 Points</p>
+                                    <SchoolStatus className="position-absolute bottom-0">Graduated with EMB3 of 12 Points</SchoolStatus>
                                 </div>
                             </div>
 
