@@ -1,121 +1,199 @@
 import React, { useState } from "react";
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
-import { MortarboardFill, FileEarmarkCheckFill } from "react-bootstrap-icons";
 import styled from "styled-components";
- 
-import 'react-vertical-timeline-component/style.min.css';
+import { Col, Container, Row } from 'react-bootstrap';
+
 import jsonConfig from '../../../../appsettings.json';
 
-const Pills = styled.div`
-    padding: 1em;
-    border-radius: 16px;
-    width: 600px;
-    background-color: white;
-    margin: 0 auto;
-    text-align: center;
-
-    @media (max-width: 750px) {
-        width: 250px;
-
-        .pill-text {
-            display: none;
-        }
-
-        .pill-icon {
-            width: 30px;
-            height: 30px;
-        }
-
-        .pill-tabs-1{
-            margin-right: 5%;
-        }
-        .pill-tabs-2{
-            margin-left: 5%;
-        }
-    }
+const Heading = styled.h1`
+    color: yellow;
 `
 
+const Year = styled.h2`
+    font-family: 'Chau Philomene One';
+    font-size: 32px;
+`
+
+const CircleArrow = styled.div`
+  position: relative;
+  flex-grow: 1; /* Ensure the line takes up the remaining space */
+  margin: 0 10px; /* Adjust margin if needed */
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 10px; /* Diameter of the dot */
+    height: 10px;
+    background-color: white; /* Color of the dot */
+    border-radius: 50%; /* Make the dot a circle */
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 125px;
+    position: absolute;
+    left: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, white 100%);
+    /* The gradient goes from transparent on the right to white on the left */
+  }
+`
+
+const SchoolTitle = styled.h3`
+  color: #A57A6D;
+`
+
+const SchoolDetails = styled.article`
+  width: 50%;
+
+  @media (max-width: 992px) {
+      width: 100%;
+  }
+`
+
+
 const Education = _ => {
-    const [tabs, setTabs] = useState(1);
 
     return (
-        <>
-            <Container className="mb-5 mt-3">
-                {tabs == 1 && (
-                    <div>
-                        <h1>My Education Background</h1>
-                        <VerticalTimeline>
+        <div className="education-container container">
+            <Container className="mt-5">
+                <Heading>My Education Background</Heading>
+                <div className="education-background-container">
+                    {/* University */}
+                    <div className="education-div">
+                        <div className="d-flex">
+                            <Year>2025</Year>
+                            <CircleArrow />
+                        </div>
 
-                            {jsonConfig.EDUCATION.EDUCATION_BACKGROUND.map((item, index) => (
-                                <VerticalTimelineElement
-                                    className="vertical-timeline-element--work"
-                                    contentStyle={item.LATEST ? { background: 'rgb(33, 150, 243)' } : { background: '#FFF', color: '#000' }}
-                                    contentArrowStyle={item.LATEST ? { borderRight: '7px solid  rgb(33, 150, 243)' } : {}}
-                                    date={item.DATE}
-                                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                    key={index}
-                                    //icon={<WorkIcon />}
-                                >
-                                    <div className={item.LATEST ? "text-light" : ""}>
-                                        <h3 className="vertical-timeline-element-title">{item.CERTIFICATION_LEVEL}</h3>
-                                        <h3 className="vertical-timeline-element-title">{item.COURSE}</h3>
-                                        <h4 className="vertical-timeline-element-subtitle" style={item.LATEST ? { color: "#F2D9BF" } : {color: "grey"}}>{item.SCHOOL}</h4>
-                                        <p>
-                                            {item.STATUS}
-                                        </p>
-                                    </div>
-                                </VerticalTimelineElement>
-                            ))}
-                        </VerticalTimeline>
-                    </div>
-                )}
-                
-                {tabs == 2 && (
-                    <div className="mt-4 mb-5">
-                        <h1>My Certification</h1>
-                        <div className="row mt-3">
-                            {jsonConfig.EDUCATION.CERTIFICATIONS.map((item, index) => (
-                                <div key={index} className="col-xs-12 col-md-5 col-lg-3 mt-2 pt-3 pb-3 offset-md-1 offset-lg-1 shadow rounded h-100">
-                                    <img src={jsonConfig.CONFIG.BUCKET_URL+item.imageUrl} alt="certificate" className="certificate-image" />
-                                    <div className="mt-2">
-                                        <strong>{item.name}</strong> <br />
-                                        <span>{item.issuedBy}</span> <br />
-                                        <span>
-                                            Issued {item.issuedDate} 
-                                            {item.expirationDate != "" && 
-                                                <span> · Expires {item.expirationDate}</span>
-                                            }
-                                        </span>
-                                        <br />
-                                        {item.url != "" &&
-                                            <a href={item.url} target="_blank"><Button className="mt-2 border shadow-none" variant="">Show Credentials</Button></a>
-                                        }
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="d-flex">
+                            <div className="education-logo-div mt-3">
+                                <img src={jsonConfig.CONFIG.BUCKET_URL + jsonConfig.EDUCATION.IMAGES.SMU_LOGO} width="150px" height="auto" className="education-logo-img" />
+                            </div>
+                            <div className="mt-4 ms-3 position-relative education-title">
+                                <SchoolTitle>Singapore Management University</SchoolTitle>
+                                <span>Bachelor of Science, Software Engineering</span>
+
+                                <p className="position-absolute bottom-0">Matriculating in 2025</p>
+                            </div>
                         </div>
                     </div>
-                )}
-                
-            </Container>
-            
 
-            <div style={{bottom: "20px", position: "fixed", width: "100%"}}>
-                <Pills className="border shadow">
-                    <a className="me-3 pill-tabs pill-tabs-1 text-dark" onClick={() => setTabs(1)}>
-                        <MortarboardFill className="pill-icon mb-1 me-2" size={25} />
-                        <span className="pill-text">Education Background</span>
-                    </a>
-                    <span>|</span>
-                    <a className="ms-3 pill-tabs pill-tabs-2 text-dark" onClick={() => setTabs(2)}>
-                        <FileEarmarkCheckFill className="pill-icon mb-1 me-2" size={25} />
-                        <span className="pill-text">Certifications</span>
-                    </a>
-                </Pills>
-            </div>
-        </>
+                    <div className="education-div">
+                        <div className="d-flex">
+                            <Year>2023-2020</Year>
+                            <CircleArrow />
+                        </div>
+
+                        <div>
+                            <div className="d-flex">
+                                <div className="education-logo-div mt-3">
+                                    <img src={jsonConfig.CONFIG.BUCKET_URL + jsonConfig.EDUCATION.IMAGES.NYP_LOGO} width="110px" height="auto" className="education-logo-img" />
+                                </div>
+                                <div className="mt-4 ms-3 position-relative education-title">
+                                    <SchoolTitle>Nanyang Polytechnic</SchoolTitle>
+                                    <span>Diploma in Information Technology</span>
+
+                                    <p className="position-absolute bottom-0">Graduated with cGPA 3.68</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <SchoolDetails className="lh-1 mt-3">
+                                    <p>Advance my skill set, further improving myself especially in full stack development. Basic knowledge on security, analytics and software engineering.</p>
+                                
+                                    <p><strong>Specialisation</strong>: Enterprise Cloud Computing (AWS)</p>
+                                    
+                                    <p>
+                                        <strong>Distinction Module</strong>: Web Development <br />
+                                        Received ‘A’s for all programming modules
+                                    </p>
+                                </SchoolDetails>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="education-div">
+                        <div className="d-flex">
+                            <Year>2020-2018</Year>
+                            <CircleArrow />
+                        </div>
+
+                        <div>
+                            <div className="d-flex">
+                                <div className="education-logo-div mt-3">
+                                    <img src={jsonConfig.CONFIG.BUCKET_URL + jsonConfig.EDUCATION.IMAGES.ITE_LOGO} width="100px" height="auto" className="education-logo-img" />
+                                </div>
+                                <div className="mt-4 ms-3 position-relative education-title">
+                                    <SchoolTitle>ITE College Central</SchoolTitle>
+                                    <span>Higher Nitec in IT App Development</span>
+
+                                    <p className="position-absolute bottom-0">Graduated with cGPA 3.74</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <SchoolDetails className="lh-1 mt-3">
+                                    <p>Trained in basic skill sets on programming and web/mobile application frameworks. Basic knowledge on designing UI/UX, creating contents and e-commerce applications.</p>
+                                    
+                                    <p>
+                                        <strong>Co Curricular Activity (CCA)</strong>: Foosball Club <br />
+                                        <strong>Position</strong>: Vice-President <br />
+                                        <strong>Competitions</strong>: <br />
+                                        Inter-ITE Foosball Competition (2018): Bronze <br />
+                                        Internation Table Soccer Federation Singapore (2019): 4th Place in Double
+                                    </p>
+
+                                    <p><strong>CCA Grade</strong>: A</p>
+                                </SchoolDetails>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="education-div">
+                        <div className="d-flex">
+                            <Year>2017-2014</Year>
+                            <CircleArrow />
+                        </div>
+                        
+                        <div>
+                            <div className="d-flex">
+                                <div className="education-logo-div mt-3">
+                                    <img src={jsonConfig.CONFIG.BUCKET_URL + jsonConfig.EDUCATION.IMAGES.CCHY_LOGO} width="140px" height="auto" className="mb-2 education-logo-img" />
+                                </div>
+                                <div className="mt-4 ms-3 position-relative education-title">
+                                    <SchoolTitle>Chung Cheng High School (Yishun)</SchoolTitle>
+                                    <span>GCE N(A) Level</span>
+
+                                    <p className="position-absolute bottom-0">Graduated with EMB3 of 12 Points</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <SchoolDetails className="lh-1 mt-3">
+                                    <p>
+                                        <strong>Co Curricular Activity (CCA)</strong>: Choir <br />
+                                        <strong>Position</strong>: Logistic EXCO <br />
+                                        <strong>Competitions</strong>: <br />
+                                        SYF 2015 &amp; 2017: Distinction <br />
+                                    </p>
+
+                                    <p>
+                                        <strong>Leadership</strong>: Peer Support Leader (PSL) <br />
+                                        <strong>Position</strong>: Logistic EXCO
+                                    </p>
+                                </SchoolDetails>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </div>
     )
 }
 

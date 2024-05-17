@@ -4,6 +4,7 @@ import { ArrowLeft } from "react-bootstrap-icons";
 import { useOverlay } from "../../Context";
 import Navigation from '../layout/Navigation'
 import About from '../portfolio/about/About'
+import Education from "../portfolio/education/Education";
 
 const DisplayOverlay = _ => {
     const navContext = useOverlay();
@@ -25,6 +26,9 @@ const DisplayOverlay = _ => {
                         <BackButton />
                         {navContext.page == Navigation.About && (
                             <About />
+                        )}
+                        {navContext.page == Navigation.Education && (
+                            <Education />
                         )}
                     </div>
                     

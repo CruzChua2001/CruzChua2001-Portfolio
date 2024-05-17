@@ -49,6 +49,23 @@ $red-color: #DA8674;
     }
 }
 
+@mixin slide-left($waitTime) {
+    animation: 
+        wait #{$waitTime},
+        slide-left 800ms #{$waitTime};
+}
+
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(1%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
 .introduction-container h2 {
     @include fade-in('0s')
 }
@@ -284,9 +301,7 @@ body {
     margin-left: 20%;
 }
 
-// About Page --------------------------------
-
-.about-container {
+.about-container, .education-container {
     color: white;
     background-image: linear-gradient(191deg, #01011EFF 0%, #03032BFF 9%, #135D7EFF 88%);
     min-width: 100vw;
@@ -294,6 +309,8 @@ body {
     overflow-y: scroll;
     padding-bottom: 5em;
 }
+
+// About Page --------------------------------
 
 .image-cropper-about {
     max-width: 100%;
@@ -338,6 +355,65 @@ body {
     width: 75%;
     margin: 0 auto;
 }
+
+// Education Page --------------------------------
+
+.education-div {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.education-logo-div {
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.education-logo-img {
+    display: block;
+}
+
+.education-title {
+    line-height: 1em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.education-background-container > :first-child > :nth-child(2) {
+    @include fade-in('0.4s')
+}
+
+.education-background-container > :first-child > :first-child {
+    @include slide-left('0.3s')
+}
+
+.education-background-container > :nth-child(2) > :nth-child(2){
+    @include fade-in('0.6s')
+}
+
+.education-background-container > :nth-child(2) > :first-child {
+    @include slide-left('0.5s')
+}
+
+.education-background-container > :nth-child(3) > :nth-child(2){
+    @include fade-in('0.8s')
+}
+
+.education-background-container > :nth-child(3) > :first-child {
+    @include slide-left('0.7s')
+}
+
+.education-background-container > :nth-child(4) > :nth-child(2){
+    @include fade-in('1s')
+}
+
+.education-background-container > :nth-child(4) > :first-child {
+    @include slide-left('0.9s')
+}
+
 // Screen size less than 1200px --------------------------------
 
 @media screen and (max-width: $screen-lg) {
