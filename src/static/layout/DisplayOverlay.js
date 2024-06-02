@@ -2,10 +2,11 @@ import React from "react";
 import { ArrowLeft } from "react-bootstrap-icons";
 
 import { useOverlay } from "../../Context";
-import Navigation from '../layout/Navigation'
-import About from '../portfolio/about/About'
+import Navigation from '../layout/Navigation';
+import About from '../portfolio/about/About';
 import Education from "../portfolio/education/Education";
-import WorkExperience from "../portfolio/workexperience/WorkExperience"
+import WorkExperience from "../portfolio/workexperience/WorkExperience";
+import Certification from "../portfolio/certification/Certification";
 
 const DisplayOverlay = _ => {
     const navContext = useOverlay();
@@ -33,6 +34,9 @@ const DisplayOverlay = _ => {
                         )}
                         {navContext.page == Navigation.WorkExperience && (
                             <WorkExperience />
+                        )}
+                        {navContext.page == Navigation.Certification && (
+                            <Certification />
                         )}
                     </div>
                     
